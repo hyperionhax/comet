@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 20 | Scripts: 2 | Modules: 0 | Tags: 0
+-- Instances: 17 | Scripts: 2 | Modules: 0 | Tags: 0
 local G2L = {};
 
 -- StarterGui.Comet
@@ -51,7 +51,6 @@ G2L["5"]["CornerRadius"] = UDim.new(0, 15);
 
 -- StarterGui.Comet.Interface.Target
 G2L["6"] = Instance.new("TextBox", G2L["3"]);
-G2L["6"]["CursorPosition"] = -1;
 G2L["6"]["Name"] = [[Target]];
 G2L["6"]["BorderSizePixel"] = 0;
 G2L["6"]["TextWrapped"] = true;
@@ -83,8 +82,8 @@ G2L["8"]["Name"] = [[Container]];
 G2L["8"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["8"]["AnchorPoint"] = Vector2.new(0.5, 0);
 G2L["8"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-G2L["8"]["Size"] = UDim2.new(0, 424, 0, 177);
-G2L["8"]["Position"] = UDim2.new(0.5, 0, 0.2544, 0);
+G2L["8"]["Size"] = UDim2.new(0, 424, 0, 203);
+G2L["8"]["Position"] = UDim2.new(0.5, 0, 0.15952, 0);
 G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["8"]["ScrollBarThickness"] = 3;
 G2L["8"]["BackgroundTransparency"] = 0.5;
@@ -122,82 +121,47 @@ G2L["c"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
 G2L["c"]["FillDirection"] = Enum.FillDirection.Horizontal;
 
 
--- StarterGui.Comet.Interface.Search
-G2L["d"] = Instance.new("TextBox", G2L["3"]);
-G2L["d"]["CursorPosition"] = -1;
-G2L["d"]["Name"] = [[Search]];
-G2L["d"]["BorderSizePixel"] = 0;
-G2L["d"]["TextWrapped"] = true;
-G2L["d"]["TextSize"] = 13;
-G2L["d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["d"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["d"]["FontFace"] = Font.new([[rbxassetid://16658221428]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["d"]["AnchorPoint"] = Vector2.new(0.5, 0);
-G2L["d"]["PlaceholderText"] = [[Search]];
-G2L["d"]["Size"] = UDim2.new(0, 424, 0, 20);
-G2L["d"]["Position"] = UDim2.new(0.5, 0, 0.1526, 0);
-G2L["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["d"]["Text"] = [[]];
-G2L["d"]["BackgroundTransparency"] = 0.5;
-
-
--- StarterGui.Comet.Interface.Search.UICorner
-G2L["e"] = Instance.new("UICorner", G2L["d"]);
-G2L["e"]["CornerRadius"] = UDim.new(0, 15);
-
-
--- StarterGui.Comet.Interface.Search.ImageLabel
-G2L["f"] = Instance.new("ImageLabel", G2L["d"]);
-G2L["f"]["BorderSizePixel"] = 0;
-G2L["f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["f"]["Image"] = [[rbxassetid://120725803010480]];
-G2L["f"]["Size"] = UDim2.new(0, 15, 0, 15);
-G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["f"]["BackgroundTransparency"] = 1;
-G2L["f"]["Position"] = UDim2.new(0.01, 0, 0.1, 0);
-
-
 -- StarterGui.Comet.Interface.Frame
-G2L["10"] = Instance.new("Frame", G2L["3"]);
-G2L["10"]["ZIndex"] = 3;
-G2L["10"]["BorderSizePixel"] = 0;
-G2L["10"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["10"]["Size"] = UDim2.new(0, 481, 0, 36);
-G2L["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["d"] = Instance.new("Frame", G2L["3"]);
+G2L["d"]["ZIndex"] = 3;
+G2L["d"]["BorderSizePixel"] = 0;
+G2L["d"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["d"]["Size"] = UDim2.new(0, 481, 0, 36);
+G2L["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 
 
 -- StarterGui.Comet.Interface.Frame.TextLabel
-G2L["11"] = Instance.new("TextLabel", G2L["10"]);
-G2L["11"]["TextWrapped"] = true;
-G2L["11"]["BorderSizePixel"] = 0;
-G2L["11"]["TextSize"] = 30;
-G2L["11"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["11"]["FontFace"] = Font.new([[rbxassetid://16658221428]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["11"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["11"]["BackgroundTransparency"] = 1;
-G2L["11"]["AnchorPoint"] = Vector2.new(0.5, 0);
-G2L["11"]["Size"] = UDim2.new(0, 200, 0, 36);
-G2L["11"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["11"]["Text"] = [[COMET]];
-G2L["11"]["Position"] = UDim2.new(0.5, 0, 0, 0);
+G2L["e"] = Instance.new("TextLabel", G2L["d"]);
+G2L["e"]["TextWrapped"] = true;
+G2L["e"]["BorderSizePixel"] = 0;
+G2L["e"]["TextSize"] = 30;
+G2L["e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["e"]["FontFace"] = Font.new([[rbxassetid://16658221428]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["e"]["BackgroundTransparency"] = 1;
+G2L["e"]["AnchorPoint"] = Vector2.new(0.5, 0);
+G2L["e"]["Size"] = UDim2.new(0, 200, 0, 36);
+G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["e"]["Text"] = [[COMET]];
+G2L["e"]["Position"] = UDim2.new(0.5, 0, 0, 0);
 
 
 -- StarterGui.Comet.Interface.Frame.TextLabel.UIGradient
-G2L["12"] = Instance.new("UIGradient", G2L["11"]);
-G2L["12"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(103, 0, 255))};
+G2L["f"] = Instance.new("UIGradient", G2L["e"]);
+G2L["f"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(103, 0, 255))};
 
 
 -- StarterGui.Comet.Interface.Outline
-G2L["13"] = Instance.new("Frame", G2L["3"]);
-G2L["13"]["BackgroundColor3"] = Color3.fromRGB(103, 0, 255);
-G2L["13"]["Size"] = UDim2.new(0, 481, 0, 1);
-G2L["13"]["Position"] = UDim2.new(0.00208, 0, 0.12457, 0);
-G2L["13"]["Name"] = [[Outline]];
-G2L["13"]["BackgroundTransparency"] = 0.5;
+G2L["10"] = Instance.new("Frame", G2L["3"]);
+G2L["10"]["BackgroundColor3"] = Color3.fromRGB(103, 0, 255);
+G2L["10"]["Size"] = UDim2.new(0, 481, 0, 1);
+G2L["10"]["Position"] = UDim2.new(0.00208, 0, 0.12457, 0);
+G2L["10"]["Name"] = [[Outline]];
+G2L["10"]["BackgroundTransparency"] = 0.5;
 
 
 -- StarterGui.Comet.Interface.Outline.UICorner
-G2L["14"] = Instance.new("UICorner", G2L["13"]);
+G2L["11"] = Instance.new("UICorner", G2L["10"]);
 
 
 
@@ -220,8 +184,6 @@ local script = G2L["2"];
 	
 	function Destroy(part)
 		spawn(function()
-	
-	
 			if game:GetService("ReplicatedStorage"):FindFirstChild("DeleteCar") then
 				SupportedGame = true
 				game:GetService("ReplicatedStorage").DeleteCar:FireServer(part)
@@ -668,6 +630,13 @@ local script = G2L["2"];
 			end
 		end},
 		
+		{"Blockhead", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				Destroy(Players[v].Character.Head:FindFirstChildOfClass("SpecialMesh"))
+			end
+		end},
+		
 		{"Sink", function()
 			local players = getPlayer(Target.Text, Players.LocalPlayer)
 			for i, v in pairs(players) do
@@ -683,8 +652,12 @@ local script = G2L["2"];
 			end
 		end},
 		
-		{"Dex", function()
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+		{"Dex++", function()
+			loadstring(game:HttpGet("https://github.com/AZYsGithub/DexPlusPlus/releases/latest/download/out.lua"))()
+		end},
+		
+		{"Infinite Yield FE", function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 		end},
 		
 		{"Ragdoll", function()
@@ -717,7 +690,7 @@ local script = G2L["2"];
 			end
 		end},
 		
-		{"No Regen", function()
+		{"Disable Regen", function()
 			local players = getPlayer(Target.Text, Players.LocalPlayer)
 			for i, v in pairs(players) do
 				Destroy(Players[v].Character:FindFirstChild("Health"))
@@ -731,9 +704,10 @@ local script = G2L["2"];
 			end
 		end},
 		
-		{"Delete Tool", function()
-			oldicon = mouse.Icon
+		{"Building Tools", function()
+			local oldicon = mouse.Icon
 			local destroytool = Instance.new("Tool", Players.LocalPlayer:FindFirstChildOfClass("Backpack"))
+			local selectionbox = Instance.new("SelectionBox", mouse.Target)
 			destroytool.RequiresHandle = false
 			destroytool.Name = "Delete"
 			destroytool.ToolTip = "Delete Tool | Comet"
@@ -743,6 +717,7 @@ local script = G2L["2"];
 				equipped = true
 				mouse.Icon = "rbxasset://textures\\HammerCursor.png"
 				while equipped do
+					selectionbox.Adornee = mouse.Target
 					wait()
 				end
 			end)
@@ -860,15 +835,68 @@ local script = G2L["2"];
 		{"Unview", function()
 			game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
 		end},
+		
+		{"Nuke", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				Destroy(Players[v])
+			end
+			
+			for i,v in pairs(game:GetDescendants()) do
+				Destroy(v)
+			end
+		end},
+		
+		{"Server Lock", function()
+			Players.PlayerAdded:Connect(function(player)
+				Destroy(player)
+			end)
+		end},
+		
+		{"Stools", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				Destroy(Players[v].Character:FindFirstChildOfClass("Humanoid"))
+				repeat wait() until Players[v].Character:FindFirstChildOfClass("Humanoid").Parent == nil
+				for _, v in ipairs(Players[v].Character:GetChildren()) do
+					if v:IsA("BackpackItem") and v:FindFirstChild("Handle") then
+						Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):EquipTool(v)
+					end
+				end
+			end
+		end},
+		
+		{"Destroy Aura", function()
+			local distance = tonumber(Target.Text) or 13
+	
+			while wait() do
+				local character = Players.LocalPlayer.Character
+				local root = character and getRoot(character)
+	
+				if not root then break end
+	
+				for _, part in pairs(workspace:GetDescendants()) do
+					if part:IsA("BasePart")
+						and part ~= workspace.Baseplate
+						and part.Name ~= "Floor"
+						and not part:IsDescendantOf(character) then
+	
+						if (part.Position - root.Position).Magnitude <= distance then
+							Destroy(part)
+						end
+					end
+				end
+			end
+		end},
 	}
 	
 	for _, item in ipairs(scripts) do
 		create(unpack(item))
 	end
 	
-	
 	local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/main/notificationtest"))();
 	local Notify = Notification.Notify;
+	
 	if SupportedGame == true then
 		Notify({
 			Description = "This game is supported, have fun";
