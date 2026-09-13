@@ -1,0 +1,774 @@
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
+
+-- Instances: 20 | Scripts: 2 | Modules: 0 | Tags: 0
+local G2L = {};
+
+-- StarterGui.Comet
+G2L["1"] = Instance.new("ScreenGui", game:GetService("CoreGui"));
+G2L["1"]["IgnoreGuiInset"] = true;
+G2L["1"]["DisplayOrder"] = 2147483647;
+G2L["1"]["ScreenInsets"] = Enum.ScreenInsets.DeviceSafeInsets;
+G2L["1"]["ClipToDeviceSafeArea"] = false;
+G2L["1"]["Name"] = [[Comet]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+G2L["1"]["ResetOnSpawn"] = false;
+
+
+-- StarterGui.Comet.LocalScript
+G2L["2"] = Instance.new("LocalScript", G2L["1"]);
+
+
+
+-- StarterGui.Comet.Interface
+G2L["3"] = Instance.new("CanvasGroup", G2L["1"]);
+G2L["3"]["BorderSizePixel"] = 0;
+G2L["3"]["BackgroundColor3"] = Color3.fromRGB(6, 0, 14);
+G2L["3"]["Size"] = UDim2.new(0, 481, 0, 289);
+G2L["3"]["Position"] = UDim2.new(0.00656, 0, 0.48425, 0);
+G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3"]["Name"] = [[Interface]];
+G2L["3"]["BackgroundTransparency"] = 0.12;
+
+
+-- StarterGui.Comet.Interface.UIDrag
+G2L["4"] = Instance.new("LocalScript", G2L["3"]);
+-- [ERROR] cannot convert Capabilities, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
+G2L["4"]["Sandboxed"] = true;
+G2L["4"]["Name"] = [[UIDrag]];
+
+
+-- StarterGui.Comet.Interface.UICorner
+G2L["5"] = Instance.new("UICorner", G2L["3"]);
+G2L["5"]["CornerRadius"] = UDim.new(0, 15);
+
+
+-- StarterGui.Comet.Interface.Target
+G2L["6"] = Instance.new("TextBox", G2L["3"]);
+G2L["6"]["CursorPosition"] = -1;
+G2L["6"]["Name"] = [[Target]];
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["TextWrapped"] = true;
+G2L["6"]["TextSize"] = 13;
+G2L["6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["FontFace"] = Font.new([[rbxassetid://16658221428]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6"]["AnchorPoint"] = Vector2.new(0.5, 0);
+G2L["6"]["PlaceholderText"] = [[Enter Input Here]];
+G2L["6"]["Size"] = UDim2.new(0, 424, 0, 20);
+G2L["6"]["Position"] = UDim2.new(0.5, 0, 0.9, 0);
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Text"] = [[]];
+G2L["6"]["BackgroundTransparency"] = 0.5;
+
+
+-- StarterGui.Comet.Interface.Target.UICorner
+G2L["7"] = Instance.new("UICorner", G2L["6"]);
+G2L["7"]["CornerRadius"] = UDim.new(0, 15);
+
+
+-- StarterGui.Comet.Interface.Container
+G2L["8"] = Instance.new("ScrollingFrame", G2L["3"]);
+G2L["8"]["Active"] = true;
+G2L["8"]["ScrollingDirection"] = Enum.ScrollingDirection.Y;
+G2L["8"]["BorderSizePixel"] = 0;
+G2L["8"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
+G2L["8"]["Name"] = [[Container]];
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["AnchorPoint"] = Vector2.new(0.5, 0);
+G2L["8"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
+G2L["8"]["ClipsDescendants"] = false;
+G2L["8"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+G2L["8"]["Size"] = UDim2.new(0, 424, 0, 177);
+G2L["8"]["Position"] = UDim2.new(0.5, 0, 0.2544, 0);
+G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["ScrollBarThickness"] = 3;
+G2L["8"]["BackgroundTransparency"] = 0.5;
+
+
+-- StarterGui.Comet.Interface.Container.UICorner
+G2L["9"] = Instance.new("UICorner", G2L["8"]);
+G2L["9"]["CornerRadius"] = UDim.new(0, 15);
+
+
+-- StarterGui.Comet.Interface.Container.Button
+G2L["a"] = Instance.new("TextButton", G2L["8"]);
+G2L["a"]["TextWrapped"] = true;
+G2L["a"]["TextSize"] = 14;
+G2L["a"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(103, 0, 255);
+G2L["a"]["FontFace"] = Font.new([[rbxassetid://16658221428]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["a"]["BackgroundTransparency"] = 0.3;
+G2L["a"]["Size"] = UDim2.new(0, 123, 0, 33);
+G2L["a"]["Name"] = [[Button]];
+G2L["a"]["Position"] = UDim2.new(0.06667, 0, 0.0232, 0);
+
+
+-- StarterGui.Comet.Interface.Container.Button.UICorner
+G2L["b"] = Instance.new("UICorner", G2L["a"]);
+G2L["b"]["CornerRadius"] = UDim.new(0, 13);
+
+
+-- StarterGui.Comet.Interface.Container.UIListLayout
+G2L["c"] = Instance.new("UIListLayout", G2L["8"]);
+G2L["c"]["HorizontalAlignment"] = Enum.HorizontalAlignment.Center;
+G2L["c"]["Wraps"] = true;
+G2L["c"]["Padding"] = UDim.new(0.015, 5);
+G2L["c"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+G2L["c"]["FillDirection"] = Enum.FillDirection.Horizontal;
+
+
+-- StarterGui.Comet.Interface.Search
+G2L["d"] = Instance.new("TextBox", G2L["3"]);
+G2L["d"]["CursorPosition"] = -1;
+G2L["d"]["Name"] = [[Search]];
+G2L["d"]["BorderSizePixel"] = 0;
+G2L["d"]["TextWrapped"] = true;
+G2L["d"]["TextSize"] = 13;
+G2L["d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["d"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["d"]["FontFace"] = Font.new([[rbxassetid://16658221428]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["d"]["AnchorPoint"] = Vector2.new(0.5, 0);
+G2L["d"]["PlaceholderText"] = [[Search]];
+G2L["d"]["Size"] = UDim2.new(0, 424, 0, 20);
+G2L["d"]["Position"] = UDim2.new(0.5, 0, 0.1526, 0);
+G2L["d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["d"]["Text"] = [[]];
+G2L["d"]["BackgroundTransparency"] = 0.5;
+
+
+-- StarterGui.Comet.Interface.Search.UICorner
+G2L["e"] = Instance.new("UICorner", G2L["d"]);
+G2L["e"]["CornerRadius"] = UDim.new(0, 15);
+
+
+-- StarterGui.Comet.Interface.Search.ImageLabel
+G2L["f"] = Instance.new("ImageLabel", G2L["d"]);
+G2L["f"]["BorderSizePixel"] = 0;
+G2L["f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["f"]["Image"] = [[rbxassetid://120725803010480]];
+G2L["f"]["Size"] = UDim2.new(0, 15, 0, 15);
+G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["f"]["BackgroundTransparency"] = 1;
+G2L["f"]["Position"] = UDim2.new(0.01, 0, 0.1, 0);
+
+
+-- StarterGui.Comet.Interface.Frame
+G2L["10"] = Instance.new("Frame", G2L["3"]);
+G2L["10"]["ZIndex"] = 3;
+G2L["10"]["BorderSizePixel"] = 0;
+G2L["10"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["10"]["Size"] = UDim2.new(0, 481, 0, 36);
+G2L["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+
+-- StarterGui.Comet.Interface.Frame.TextLabel
+G2L["11"] = Instance.new("TextLabel", G2L["10"]);
+G2L["11"]["TextWrapped"] = true;
+G2L["11"]["BorderSizePixel"] = 0;
+G2L["11"]["TextSize"] = 30;
+G2L["11"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["11"]["FontFace"] = Font.new([[rbxassetid://16658221428]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["11"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["11"]["BackgroundTransparency"] = 1;
+G2L["11"]["AnchorPoint"] = Vector2.new(0.5, 0);
+G2L["11"]["Size"] = UDim2.new(0, 200, 0, 36);
+G2L["11"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["11"]["Text"] = [[COMET]];
+G2L["11"]["Position"] = UDim2.new(0.5, 0, 0, 0);
+
+
+-- StarterGui.Comet.Interface.Frame.TextLabel.UIGradient
+G2L["12"] = Instance.new("UIGradient", G2L["11"]);
+G2L["12"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(255, 255, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(103, 0, 255))};
+
+
+-- StarterGui.Comet.Interface.Outline
+G2L["13"] = Instance.new("Frame", G2L["3"]);
+G2L["13"]["BackgroundColor3"] = Color3.fromRGB(103, 0, 255);
+G2L["13"]["Size"] = UDim2.new(0, 481, 0, 1);
+G2L["13"]["Position"] = UDim2.new(0.00208, 0, 0.12457, 0);
+G2L["13"]["Name"] = [[Outline]];
+G2L["13"]["BackgroundTransparency"] = 0.5;
+
+
+-- StarterGui.Comet.Interface.Outline.UICorner
+G2L["14"] = Instance.new("UICorner", G2L["13"]);
+
+
+
+-- StarterGui.Comet.LocalScript
+local function C_2()
+local script = G2L["2"];
+	local GUI = script.Parent
+	local Interface = GUI.Interface
+	
+	local Container = Interface.Container
+	local Template = Container.Button
+	
+	local Target = Interface.Target
+	
+	local Players = game:GetService("Players")
+	
+	SupportedGame = false
+	
+	Template.Visible = false
+	
+	function Destroy(part)
+		spawn(function()
+	
+	
+			if game:GetService("ReplicatedStorage"):FindFirstChild("DeleteCar") then
+				SupportedGame = true
+				game:GetService("ReplicatedStorage").DeleteCar:FireServer(part)
+	
+	
+			elseif game:GetService("Players").LocalPlayer.Character:FindFirstChild("HandlessSegway") then
+				SupportedGame = true
+				for i,slaves in pairs(game:GetDescendants()) do
+					if slaves.Name == "DestroySegway" then
+						slaves:FireServer(part, {Value = part})
+					end
+				end
+	
+	
+			elseif game:GetService("ReplicatedStorage"):FindFirstChild("GuiHandler") then
+				SupportedGame = true
+				game:GetService("ReplicatedStorage").GuiHandler:FireServer(false, part)
+	
+	
+			elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Building Tools") then
+				SupportedGame = true
+				local args = {
+					[1] = "Remove",
+					[2] = {
+						[1] = part
+					}
+				}
+				game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Building Tools").SyncAPI.ServerEndpoint:InvokeServer(unpack(args))
+	
+	
+			end
+		end)
+	end
+	
+	Destroy(aas)
+	
+	function splitString(str,delim)
+		local broken = {}
+		if delim == nil then delim = "," end
+		for w in string.gmatch(str,"[^"..delim.."]+") do
+			table.insert(broken,w)
+		end
+		return broken
+	end
+	function toTokens(str)
+		local tokens = {}
+		for op,name in string.gmatch(str,"([+-])([^+-]+)") do
+			table.insert(tokens,{Operator = op,Name = name})
+		end
+		return tokens
+	end
+	function getRoot(char)
+		local rootPart = char:FindFirstChild('HumanoidRootPart') or char:FindFirstChild('Torso') or char:FindFirstChild('UpperTorso')
+		return rootPart
+	end
+	local WTS = function(Object)
+		local ObjectVector = workspace.CurrentCamera:WorldToScreenPoint(Object.Position)
+		return Vector2.new(ObjectVector.X, ObjectVector.Y)
+	end
+	local mouse = Players.LocalPlayer:GetMouse()
+	local MousePositionToVector2 = function()
+		return Vector2.new(mouse.X, mouse.Y)
+	end
+	local GetClosestPlayerFromCursor = function()
+		local found = nil
+		local ClosestDistance = math.huge
+		for i, v in pairs(Players:GetPlayers()) do
+			if v ~= Players.LocalPlayer and v.Character and v.Character:FindFirstChildOfClass("Humanoid") then
+				for k, x in pairs(v.Character:GetChildren()) do
+					if string.find(x.Name, "Torso") then
+						local Distance = (WTS(x) - MousePositionToVector2()).Magnitude
+						if Distance < ClosestDistance then
+							ClosestDistance = Distance
+							found = v
+						end
+					end
+				end
+			end
+		end
+		return found
+	end
+	local SpecialPlayerCases = {
+		["all"] = function(speaker) return Players:GetPlayers() end,
+		["others"] = function(speaker)
+			local plrs = {}
+			for i,v in pairs(Players:GetPlayers()) do
+				if v ~= speaker then
+					table.insert(plrs,v)
+				end
+			end
+			return plrs
+		end,
+		["me"] = function(speaker)return {speaker} end,
+		["#(%d+)"] = function(speaker,args,currentList)
+			local returns = {}
+			local randAmount = tonumber(args[1])
+			local players = {unpack(currentList)}
+			for i = 1,randAmount do
+				if #players == 0 then break end
+				local randIndex = math.random(1,#players)
+				table.insert(returns,players[randIndex])
+				table.remove(players,randIndex)
+			end
+			return returns
+		end,
+		["random"] = function(speaker,args,currentList)
+			local players = Players:GetPlayers()
+			local localplayer = Players.LocalPlayer
+			table.remove(players, table.find(players, localplayer))
+			return {players[math.random(1,#players)]}
+		end,
+		["%%(.+)"] = function(speaker,args)
+			local returns = {}
+			local team = args[1]
+			for _,plr in pairs(Players:GetPlayers()) do
+				if plr.Team and string.sub(string.lower(plr.Team.Name),1,#team) == string.lower(team) then
+					table.insert(returns,plr)
+				end
+			end
+			return returns
+		end,
+		["allies"] = function(speaker)
+			local returns = {}
+			local team = speaker.Team
+			for _,plr in pairs(Players:GetPlayers()) do
+				if plr.Team == team then
+					table.insert(returns,plr)
+				end
+			end
+			return returns
+		end,
+		["enemies"] = function(speaker)
+			local returns = {}
+			local team = speaker.Team
+			for _,plr in pairs(Players:GetPlayers()) do
+				if plr.Team ~= team then
+					table.insert(returns,plr)
+				end
+			end
+			return returns
+		end,
+		["team"] = function(speaker)
+			local returns = {}
+			local team = speaker.Team
+			for _,plr in pairs(Players:GetPlayers()) do
+				if plr.Team == team then
+					table.insert(returns,plr)
+				end
+			end
+			return returns
+		end,
+		["nonteam"] = function(speaker)
+			local returns = {}
+			local team = speaker.Team
+			for _,plr in pairs(Players:GetPlayers()) do
+				if plr.Team ~= team then
+					table.insert(returns,plr)
+				end
+			end
+			return returns
+		end,
+		["friends"] = function(speaker,args)
+			local returns = {}
+			for _,plr in pairs(Players:GetPlayers()) do
+				if plr:IsFriendsWithAsync(speaker.UserId) and plr ~= speaker then
+					table.insert(returns,plr)
+				end
+			end
+			return returns
+		end,
+		["nonfriends"] = function(speaker,args)
+			local returns = {}
+			for _,plr in pairs(Players:GetPlayers()) do
+				if not plr:IsFriendsWithAsync(speaker.UserId) and plr ~= speaker then
+					table.insert(returns,plr)
+				end
+			end
+			return returns
+		end,
+		["guests"] = function(speaker,args)
+			local returns = {}
+			for _,plr in pairs(Players:GetPlayers()) do
+				if plr.Guest then
+					table.insert(returns,plr)
+				end
+			end
+			return returns
+		end,
+		["bacons"] = function(speaker,args)
+			local returns = {}
+			for _,plr in pairs(Players:GetPlayers()) do
+				if plr.Character:FindFirstChild('Pal Hair') or plr.Character:FindFirstChild('Kate Hair') then
+					table.insert(returns,plr)
+				end
+			end
+			return returns
+		end,
+		["age(%d+)"] = function(speaker,args)
+			local returns = {}
+			local age = tonumber(args[1])
+			if not age == nil then return end
+			for _,plr in pairs(Players:GetPlayers()) do
+				if plr.AccountAge <= age then
+					table.insert(returns,plr)
+				end
+			end
+			return returns
+		end,
+		["nearest"] = function(speaker,args,currentList)
+			local speakerChar = speaker.Character
+			if not speakerChar or not getRoot(speakerChar) then return end
+			local lowest = math.huge
+			local NearestPlayer = nil
+			for _,plr in pairs(currentList) do
+				if plr ~= speaker and plr.Character then
+					local distance = plr:DistanceFromCharacter(getRoot(speakerChar).Position)
+					if distance < lowest then
+						lowest = distance
+						NearestPlayer = {plr}
+					end
+				end
+			end
+			return NearestPlayer
+		end,
+		["farthest"] = function(speaker,args,currentList)
+			local speakerChar = speaker.Character
+			if not speakerChar or not getRoot(speakerChar) then return end
+			local highest = 0
+			local Farthest = nil
+			for _,plr in pairs(currentList) do
+				if plr ~= speaker and plr.Character then
+					local distance = plr:DistanceFromCharacter(getRoot(speakerChar).Position)
+					if distance > highest then
+						highest = distance
+						Farthest = {plr}
+					end
+				end
+			end
+			return Farthest
+		end,
+		["group(%d+)"] = function(speaker,args)
+			local returns = {}
+			local groupID = tonumber(args[1])
+			for _,plr in pairs(Players:GetPlayers()) do
+				if plr:IsInGroupAsync(groupID) then  
+					table.insert(returns,plr)
+				end
+			end
+			return returns
+		end,
+		["alive"] = function(speaker,args)
+			local returns = {}
+			for _,plr in pairs(Players:GetPlayers()) do
+				if plr.Character and plr.Character:FindFirstChildOfClass("Humanoid") and plr.Character:FindFirstChildOfClass("Humanoid").Health > 0 then
+					table.insert(returns,plr)
+				end
+			end
+			return returns
+		end,
+		["dead"] = function(speaker,args)
+			local returns = {}
+			for _,plr in pairs(Players:GetPlayers()) do
+				if (not plr.Character or not plr.Character:FindFirstChildOfClass("Humanoid")) or plr.Character:FindFirstChildOfClass("Humanoid").Health <= 0 then
+					table.insert(returns,plr)
+				end
+			end
+			return returns
+		end,
+		["rad(%d+)"] = function(speaker,args)
+			local returns = {}
+			local radius = tonumber(args[1])
+			local speakerChar = speaker.Character
+			if not speakerChar or not getRoot(speakerChar) then return end
+			for _,plr in pairs(Players:GetPlayers()) do
+				if plr.Character and getRoot(plr.Character) then
+					local magnitude = (getRoot(plr.Character).Position-getRoot(speakerChar).Position).magnitude
+					if magnitude <= radius then table.insert(returns,plr) end
+				end
+			end
+			return returns
+		end,
+		["cursor"] = function(speaker)
+			local plrs = {}
+			local v = GetClosestPlayerFromCursor()
+			if v ~= nil then table.insert(plrs, v) end
+			return plrs
+		end,
+	}
+	function onlyIncludeInTable(tab,matches)
+		local matchTable = {}
+		local resultTable = {}
+		for i,v in pairs(matches) do matchTable[v.Name] = true end
+		for i,v in pairs(tab) do if matchTable[v.Name] then table.insert(resultTable,v) end end
+		return resultTable
+	end
+	
+	function removeTableMatches(tab,matches)
+		local matchTable = {}
+		local resultTable = {}
+		for i,v in pairs(matches) do matchTable[v.Name] = true end
+		for i,v in pairs(tab) do if not matchTable[v.Name] then table.insert(resultTable,v) end end
+		return resultTable
+	end
+	
+	function getPlayersByName(Name)
+		local Name,Len,Found = string.lower(Name),#Name,{}
+		for _,v in pairs(Players:GetPlayers()) do
+			if Name:sub(0,1) == '@' then
+				if string.sub(string.lower(v.Name),1,Len-1) == Name:sub(2) then
+					table.insert(Found,v)
+				end
+			else
+				if string.sub(string.lower(v.Name),1,Len) == Name or string.sub(string.lower(v.DisplayName),1,Len) == Name then
+					table.insert(Found,v)
+				end
+			end
+		end
+		return Found
+	end
+	function getPlayer(list,speaker)
+		if list == nil then return {speaker.Name} end
+		local nameList = splitString(list,",")
+	
+		local foundList = {}
+	
+		for _,name in pairs(nameList) do
+			if string.sub(name,1,1) ~= "+" and string.sub(name,1,1) ~= "-" then name = "+"..name end
+			local tokens = toTokens(name)
+			local initialPlayers = Players:GetPlayers()
+	
+			for i,v in pairs(tokens) do
+				if v.Operator == "+" then
+					local tokenContent = v.Name
+					local foundCase = false
+					for regex,case in pairs(SpecialPlayerCases) do
+						local matches = {string.match(tokenContent,"^"..regex.."$")}
+						if #matches > 0 then
+							foundCase = true
+							initialPlayers = onlyIncludeInTable(initialPlayers,case(speaker,matches,initialPlayers))
+						end
+					end
+					if not foundCase then
+						initialPlayers = onlyIncludeInTable(initialPlayers,getPlayersByName(tokenContent))
+					end
+				else
+					local tokenContent = v.Name
+					local foundCase = false
+					for regex,case in pairs(SpecialPlayerCases) do
+						local matches = {string.match(tokenContent,"^"..regex.."$")}
+						if #matches > 0 then
+							foundCase = true
+							initialPlayers = removeTableMatches(initialPlayers,case(speaker,matches,initialPlayers))
+						end
+					end
+					if not foundCase then
+						initialPlayers = removeTableMatches(initialPlayers,getPlayersByName(tokenContent))
+					end
+				end
+			end
+	
+			for i,v in pairs(initialPlayers) do table.insert(foundList,v) end
+		end
+	
+		local foundNames = {}
+		for i,v in pairs(foundList) do table.insert(foundNames,v.Name) end
+	
+		return foundNames
+	end
+	
+	
+	function FindInTable(tbl,val)
+		if tbl == nil then return false end
+		for _,v in pairs(tbl) do
+			if v == val then return true end
+		end 
+		return false
+	end
+	local slockk = false
+	local banned = {}
+	Players.PlayerAdded:connect(function(plr)
+		if slockk then
+			Destroy(plr)
+		end
+		if FindInTable(banned, plr.UserId) then
+			Destroy(plr)
+		end
+	end)
+	
+	local function create(name, func)
+		local button = Template:Clone()
+		button.Name = name
+		button.Text = name
+		button.Visible = true
+		button.Parent = Container
+	
+		button.MouseButton1Click:Connect(function()
+			func(button)
+		end)
+	end
+	
+	local scripts = {
+		{"Kill", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				if Players[v].Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R6 then
+					Destroy(Players[v].Character.Torso.Neck)
+				else
+					Destroy(Players[v].Character.Head.Neck)
+				end
+			end
+		end},
+		
+		{"Naked", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				Destroy(Players[v].Character:FindFirstChildOfClass("Pants"))
+				Destroy(Players[v].Character:FindFirstChildOfClass("ShirtGraphic"))
+				Destroy(Players[v].Character:FindFirstChildOfClass("Shirt"))
+			end
+		end},
+		
+		{"Box", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				for i, v in pairs(Players[v].Character:GetChildren()) do
+					if v:IsA("Accessory") then
+						Destroy(v)
+					end
+				end
+				for i, v in pairs(Players[v].Character:GetChildren()) do
+					if v:IsA("CharacterMesh") then
+						Destroy(v)
+					end
+				end
+				Destroy(Players[v].Character:FindFirstChildOfClass("Pants"))
+				Destroy(Players[v].Character:FindFirstChildOfClass("Shirt"))
+				Destroy(Players[v].Character:FindFirstChildOfClass("ShirtGraphic"))
+				Destroy(Players[v].Character["Left Arm"])
+				Destroy(Players[v].Character["Left Leg"])
+				Destroy(Players[v].Character["Right Arm"])
+				Destroy(Players[v].Character["Right Leg"])
+				Destroy(Players[v].Character.Head:FindFirstChildOfClass("SpecialMesh"))
+				Destroy(Players[v].Character.Head:FindFirstChildOfClass("Decal"))
+			end
+		end},
+		
+		{"Sink", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				Destroy(Players[v].Character.HumanoidRootPart)
+			end
+		end},
+		
+		{"Ban", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				table.insert(banned, Players[v].UserId)
+				Destroy(Players[v])
+			end
+		end},
+		
+		{"Dex", function()
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
+		end},
+		
+		{"Ragdoll", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				Destroy(Players[v].Character:FindFirstChildOfClass("Humanoid"))
+			end
+		end},
+		
+		{"Remove Tools", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				for i, v in pairs(Players[v]:FindFirstChildOfClass("Backpack"):GetChildren()) do
+					Destroy(v)
+				end
+			end
+		end},
+	}
+	
+	for _, item in ipairs(scripts) do
+		create(unpack(item))
+	end
+	
+	
+	local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/main/notificationtest"))();
+	local Notify = Notification.Notify;
+	if SupportedGame == true then
+		Notify({
+			Description = "This game is supported, have fun";
+			Title = "Comet";
+			Duration = 5;
+	
+		});
+	else
+		Notify({
+			Description = "This game is not supported try another game";
+			Title = "Comet";
+			Duration = 5;
+	
+		});
+	end
+	
+end;
+task.spawn(C_2);
+-- StarterGui.Comet.Interface.UIDrag
+local function C_4()
+local script = G2L["4"];
+	local UIS = game:GetService('UserInputService')
+	local frame = script.Parent
+	local dragToggle = nil
+	local dragSpeed = 0.25
+	local dragStart = nil
+	local startPos = nil
+	
+	local function updateInput(input)
+		local delta = input.Position - dragStart
+		local position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X,
+			startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		game:GetService('TweenService'):Create(frame, TweenInfo.new(dragSpeed), {Position = position}):Play()
+	end
+	
+	frame.InputBegan:Connect(function(input)
+		if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then 
+			dragToggle = true
+			dragStart = input.Position
+			startPos = frame.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragToggle = false
+				end
+			end)
+		end
+	end)
+	
+	UIS.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			if dragToggle then
+				updateInput(input)
+			end
+		end
+	end)
+end;
+task.spawn(C_4);
+
+return G2L["1"], require;
