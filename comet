@@ -704,6 +704,164 @@ local script = G2L["2"];
 				end
 			end
 		end},
+		
+		{"Remove Face", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				Destroy(Players[v].Character.Head:FindFirstChildOfClass("Decal"))
+			end
+		end},
+		
+		{"Punish", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				Destroy(Players[v].Character)
+			end
+		end},
+		
+		{"No Regen", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				Destroy(Players[v].Character:FindFirstChild("Health"))
+			end
+		end},
+		
+		{"Goto", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Players[v].Character.HumanoidRootPart.CFrame
+			end
+		end},
+		
+		{"Delete Tool", function()
+			oldicon = mouse.Icon
+			local destroytool = Instance.new("Tool", Players.LocalPlayer:FindFirstChildOfClass("Backpack"))
+			destroytool.RequiresHandle = false
+			destroytool.Name = "Delete"
+			destroytool.ToolTip = "Delete Tool | Comet"
+			destroytool.TextureId = "http://www.roblox.com/asset/?id=12223874"
+			destroytool.CanBeDropped = false
+			destroytool.Equipped:connect(function()
+				equipped = true
+				mouse.Icon = "rbxasset://textures\\HammerCursor.png"
+				while equipped do
+					wait()
+				end
+			end)
+			destroytool.Unequipped:connect(function()
+				equipped = false
+				mouse.Icon = oldicon
+			end)
+			destroytool.Activated:connect(function()
+				local explosion = Instance.new("Explosion", workspace)
+				explosion.BlastPressure = 0
+				explosion.BlastRadius = 0
+				explosion.DestroyJointRadiusPercent = 0
+				explosion.ExplosionType = Enum.ExplosionType.NoCraters
+				explosion.Position = mouse.Target.Position
+				Destroy(mouse.Target)
+			end)
+			game:GetService("StarterGui"):SetCoreGuiEnabled('Backpack', true)
+			Players.LocalPlayer.CharacterAdded:connect(function()
+				local destroytool = Instance.new("Tool", Players.LocalPlayer:FindFirstChildOfClass("Backpack"))
+				destroytool.RequiresHandle = false
+				destroytool.Name = "Delete tool"
+				destroytool.ToolTip = "Comet's delete tool"
+				destroytool.TextureId = "http://www.roblox.com/asset/?id=12223874"
+				destroytool.CanBeDropped = false
+				destroytool.Equipped:connect(function()
+					equipped = true
+					mouse.Icon = "rbxasset://textures\\HammerCursor.png"
+					while equipped do
+						selectionbox.Adornee = mouse.Target
+						wait()
+					end
+				end)
+				destroytool.Unequipped:connect(function()
+					equipped = false
+					selectionbox.Adornee = nil
+					mouse.Icon = oldmouse
+					print(oldmouse)
+				end)
+				destroytool.Activated:connect(function()
+					local explosion = Instance.new("Explosion", workspace)
+					explosion.BlastPressure = 0
+					explosion.BlastRadius = 0
+					explosion.DestroyJointRadiusPercent = 0
+					explosion.ExplosionType = Enum.ExplosionType.NoCraters
+					explosion.Position = mouse.Target.Position
+					Destroy(mouse.Target)
+				end)
+				game:GetService("StarterGui"):SetCoreGuiEnabled('Backpack', true)
+			end)
+		end},
+		
+		{"No Limbs", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				if Players[v].Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R6 then
+					Destroy(Players[v].Character["Left Arm"])
+					Destroy(Players[v].Character["Left Leg"])
+					Destroy(Players[v].Character["Right Arm"])
+					Destroy(Players[v].Character["Right Leg"])
+				else
+					Destroy(Players[v].Character["LeftUpperArm"])
+					Destroy(Players[v].Character["LeftUpperLeg"])
+					Destroy(Players[v].Character["RightUpperArm"])
+					Destroy(Players[v].Character["RightUpperLeg"])
+				end
+			end
+		end},
+		
+		{"Bald", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				for i, v in pairs(Players[v].Character:GetChildren()) do
+					if v:IsA("Accessory") then
+						Destroy(v)
+					end
+				end
+			end
+		end},
+		
+		{"Kick", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				Destroy(Players[v])
+			end
+		end},
+		
+		{"Clear Workspace", function()
+			for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+				Destroy(v)
+			end
+		end},
+		
+		{"Clear Lighting", function()
+			for i,v in pairs(game:GetService("Lighting"):GetChildren()) do
+				Destroy(v)
+			end
+		end},
+		
+		{"Remove GUIs", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				for i,d in pairs(Players[v].PlayerGui:GetChildren()) do
+					d:Destroy()
+				end
+			end
+		end},
+		
+		{"View", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				game.Workspace.CurrentCamera.CameraSubject = Players[v].Character.Humanoid
+			end
+		end},
+		
+		{"Unview", function()
+			game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+		end},
 	}
 	
 	for _, item in ipairs(scripts) do
