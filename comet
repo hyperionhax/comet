@@ -637,6 +637,17 @@ local script = G2L["2"];
 			end
 		end},
 		
+		{"Blockchar", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				for i, v in pairs(Players[v].Character:GetChildren()) do
+					if v:IsA("CharacterMesh") then
+						Destroy(v)
+					end
+				end
+			end
+		end},
+		
 		{"Sink", function()
 			local players = getPlayer(Target.Text, Players.LocalPlayer)
 			for i, v in pairs(players) do
@@ -652,11 +663,11 @@ local script = G2L["2"];
 			end
 		end},
 		
-		{"Dex++", function()
+		{"Explorer", function()
 			loadstring(game:HttpGet("https://github.com/AZYsGithub/DexPlusPlus/releases/latest/download/out.lua"))()
 		end},
 		
-		{"Infinite Yield FE", function()
+		{"Infinite Yield", function()
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 		end},
 		
@@ -694,6 +705,13 @@ local script = G2L["2"];
 			local players = getPlayer(Target.Text, Players.LocalPlayer)
 			for i, v in pairs(players) do
 				Destroy(Players[v].Character:FindFirstChild("Health"))
+			end
+		end},
+		
+		{"Disable Anims", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				Destroy(Players[v].Character:FindFirstChildOfClass("Humanoid"):FindFirstChildOfClass("Animator"))
 			end
 		end},
 		
@@ -769,7 +787,33 @@ local script = G2L["2"];
 			end)
 		end},
 		
-		{"No Limbs", function()
+		{"Remove Arms", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				if Players[v].Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R6 then
+					Destroy(Players[v].Character["Left Arm"])
+					Destroy(Players[v].Character["Right Arm"])
+				else
+					Destroy(Players[v].Character["LeftUpperArm"])
+					Destroy(Players[v].Character["RightUpperArm"])
+				end
+			end
+		end},
+		
+		{"Remove Legs", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				if Players[v].Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R6 then
+					Destroy(Players[v].Character["Left Leg"])
+					Destroy(Players[v].Character["Right Leg"])
+				else
+					Destroy(Players[v].Character["LeftUpperLeg"])
+					Destroy(Players[v].Character["RightUpperLeg"])
+				end
+			end
+		end},
+		
+		{"Remove Limbs", function()
 			local players = getPlayer(Target.Text, Players.LocalPlayer)
 			for i, v in pairs(players) do
 				if Players[v].Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R6 then
@@ -786,6 +830,24 @@ local script = G2L["2"];
 			end
 		end},
 		
+		{"Remove Waist", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				if Players[v].Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R15 then
+					Destroy(Players[v].Character.UpperTorso.Waist)
+				end
+			end
+		end},
+		
+		{"Remove Root", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				if Players[v].Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType.R15 then
+					Destroy(Players[v].Character.LowerTorso.Root)
+				end
+			end
+		end},
+		
 		{"Bald", function()
 			local players = getPlayer(Target.Text, Players.LocalPlayer)
 			for i, v in pairs(players) do
@@ -794,6 +856,20 @@ local script = G2L["2"];
 						Destroy(v)
 					end
 				end
+			end
+		end},
+		
+		{"Shirtless", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				Destroy(Players[v].Character:FindFirstChildOfClass("Shirt"))
+			end
+		end},
+		
+		{"Pantsless", function()
+			local players = getPlayer(Target.Text, Players.LocalPlayer)
+			for i, v in pairs(players) do
+				Destroy(Players[v].Character:FindFirstChildOfClass("Pants"))
 			end
 		end},
 		
@@ -837,14 +913,20 @@ local script = G2L["2"];
 		end},
 		
 		{"Nuke", function()
-			local players = getPlayer(Target.Text, Players.LocalPlayer)
-			for i, v in pairs(players) do
-				Destroy(Players[v])
-			end
-			
 			for i,v in pairs(game:GetDescendants()) do
 				Destroy(v)
 			end
+			
+			for i, v in pairs(Players:GetPlayers()) do
+				if v ~= Players.LocalPlayer then
+					Destroy(Players[v])
+				end
+			end
+	
+			Players.PlayerAdded:Connect(function(player)
+				Destroy(player)
+			end)
+	
 		end},
 		
 		{"Server Lock", function()
@@ -885,6 +967,14 @@ local script = G2L["2"];
 							Destroy(part)
 						end
 					end
+				end
+			end
+		end},
+		
+		{"Remove Scripts", function()
+			for i, v in pairs(game:GetDescendants()) do
+				if (v:IsA("Script") or v:IsA("LocalScript") or v:IsA("ModuleScript")) and not v:IsDescendantOf(GUI) then
+					v:Destroy()
 				end
 			end
 		end},
