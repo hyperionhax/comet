@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 17 | Scripts: 2 | Modules: 0 | Tags: 0
+-- Instances: 20 | Scripts: 2 | Modules: 0 | Tags: 0
 local G2L = {};
 
 -- StarterGui.Comet
@@ -51,6 +51,7 @@ G2L["5"]["CornerRadius"] = UDim.new(0, 15);
 
 -- StarterGui.Comet.Interface.Target
 G2L["6"] = Instance.new("TextBox", G2L["3"]);
+G2L["6"]["CursorPosition"] = -1;
 G2L["6"]["Name"] = [[Target]];
 G2L["6"]["BorderSizePixel"] = 0;
 G2L["6"]["TextWrapped"] = true;
@@ -61,7 +62,7 @@ G2L["6"]["FontFace"] = Font.new([[rbxassetid://16658221428]], Enum.FontWeight.Re
 G2L["6"]["AnchorPoint"] = Vector2.new(0.5, 0);
 G2L["6"]["PlaceholderText"] = [[Enter Input Here]];
 G2L["6"]["Size"] = UDim2.new(0, 424, 0, 20);
-G2L["6"]["Position"] = UDim2.new(0.5, 0, 0.9, 0);
+G2L["6"]["Position"] = UDim2.new(0.5, 0, 0.8654, 0);
 G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["6"]["Text"] = [[]];
 G2L["6"]["BackgroundTransparency"] = 0.5;
@@ -82,8 +83,8 @@ G2L["8"]["Name"] = [[Container]];
 G2L["8"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["8"]["AnchorPoint"] = Vector2.new(0.5, 0);
 G2L["8"]["AutomaticCanvasSize"] = Enum.AutomaticSize.Y;
-G2L["8"]["Size"] = UDim2.new(0, 424, 0, 203);
-G2L["8"]["Position"] = UDim2.new(0.5, 0, 0.15952, 0);
+G2L["8"]["Size"] = UDim2.new(0, 424, 0, 200);
+G2L["8"]["Position"] = UDim2.new(0.50208, 0, 0.1526, 0);
 G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["8"]["ScrollBarThickness"] = 3;
 G2L["8"]["BackgroundTransparency"] = 0.5;
@@ -165,9 +166,57 @@ G2L["11"] = Instance.new("UICorner", G2L["10"]);
 
 
 
+-- StarterGui.Comet.Interface.slocklabel
+G2L["12"] = Instance.new("TextLabel", G2L["3"]);
+G2L["12"]["BorderSizePixel"] = 0;
+G2L["12"]["TextSize"] = 12;
+G2L["12"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["12"]["FontFace"] = Font.new([[rbxassetid://16658221428]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["12"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["12"]["BackgroundTransparency"] = 1;
+G2L["12"]["Size"] = UDim2.new(0, 210, 0, 18);
+G2L["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["12"]["Text"] = [[SLOCK: OFF]];
+G2L["12"]["Name"] = [[slocklabel]];
+G2L["12"]["Position"] = UDim2.new(0.283, 0, 0.932, 0);
+
+
+-- StarterGui.Comet.Interface.replabel
+G2L["13"] = Instance.new("TextLabel", G2L["3"]);
+G2L["13"]["BorderSizePixel"] = 0;
+G2L["13"]["TextSize"] = 12;
+G2L["13"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["13"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["13"]["FontFace"] = Font.new([[rbxassetid://16658221428]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["13"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["13"]["BackgroundTransparency"] = 1;
+G2L["13"]["Size"] = UDim2.new(0, 179, 0, 18);
+G2L["13"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["13"]["Text"] = [[QUEUE: 0]];
+G2L["13"]["Name"] = [[replabel]];
+G2L["13"]["Position"] = UDim2.new(0.12466, 0, 0.93154, 0);
+
+
+-- StarterGui.Comet.Interface.auralabel
+G2L["14"] = Instance.new("TextLabel", G2L["3"]);
+G2L["14"]["BorderSizePixel"] = 0;
+G2L["14"]["TextSize"] = 12;
+G2L["14"]["TextXAlignment"] = Enum.TextXAlignment.Right;
+G2L["14"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["14"]["FontFace"] = Font.new([[rbxassetid://16658221428]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["14"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["14"]["BackgroundTransparency"] = 1;
+G2L["14"]["Size"] = UDim2.new(0, 178, 0, 18);
+G2L["14"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["14"]["Text"] = [[AURA: OFF]];
+G2L["14"]["Name"] = [[auralabel]];
+G2L["14"]["Position"] = UDim2.new(0.505, 0, 0.932, 0);
+
+
 -- StarterGui.Comet.LocalScript
 local function C_2()
 local script = G2L["2"];
+	local start = tick()
 	local GUI = script.Parent
 	local Interface = GUI.Interface
 	
@@ -177,12 +226,33 @@ local script = G2L["2"];
 	local Target = Interface.Target
 	
 	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
 	
 	SupportedGame = false
 	
 	Template.Visible = false
 	
+	slock = false
+	aura = false
+	
+	local slabel = Interface.slocklabel
+	local alabel = Interface.auralabel
+	local qlabel = Interface.replabel
+	
+	local slconnection
+	local auraconnection
+	
+	local queue = 0
+	
+	local function updatequeue()
+		qlabel.Text = "QUEUE: " .. queue
+	end
+	
+	
 	function Destroy(part)
+		queue = queue + 1
+		updatequeue()
+		
 		spawn(function()
 			if game:GetService("ReplicatedStorage"):FindFirstChild("DeleteCar") then
 				SupportedGame = true
@@ -215,6 +285,9 @@ local script = G2L["2"];
 	
 	
 			end
+			
+			queue = math.max(0, queue - 1)
+			updatequeue()
 		end)
 	end
 	
@@ -722,7 +795,7 @@ local script = G2L["2"];
 			end
 		end},
 		
-		{"Building Tools", function()
+		{"Delete Tool", function()
 			local oldicon = mouse.Icon
 			local destroytool = Instance.new("Tool", Players.LocalPlayer:FindFirstChildOfClass("Backpack"))
 			local selectionbox = Instance.new("SelectionBox", mouse.Target)
@@ -929,12 +1002,6 @@ local script = G2L["2"];
 	
 		end},
 		
-		{"Server Lock", function()
-			Players.PlayerAdded:Connect(function(player)
-				Destroy(player)
-			end)
-		end},
-		
 		{"Stools", function()
 			local players = getPlayer(Target.Text, Players.LocalPlayer)
 			for i, v in pairs(players) do
@@ -948,34 +1015,61 @@ local script = G2L["2"];
 			end
 		end},
 		
-		{"Destroy Aura", function()
-			local distance = tonumber(Target.Text) or 13
-	
-			while wait() do
-				local character = Players.LocalPlayer.Character
-				local root = character and getRoot(character)
-	
-				if not root then break end
-	
-				for _, part in pairs(workspace:GetDescendants()) do
-					if part:IsA("BasePart")
-						and part ~= workspace.Baseplate
-						and part.Name ~= "Floor"
-						and not part:IsDescendantOf(character) then
-	
-						if (part.Position - root.Position).Magnitude <= distance then
-							Destroy(part)
-						end
-					end
-				end
-			end
-		end},
-		
 		{"Remove Scripts", function()
 			for i, v in pairs(game:GetDescendants()) do
 				if (v:IsA("Script") or v:IsA("LocalScript") or v:IsA("ModuleScript")) and not v:IsDescendantOf(GUI) then
 					v:Destroy()
 				end
+			end
+		end},
+		
+		{"Server Lock", function()
+			slock = not slock
+			if slock then
+				local slconnection = Players.PlayerAdded:Connect(function(player)
+					Destroy(player)
+				end)
+				slabel.Text = "SLOCK: ON"
+			else
+				if slconnection then
+					slconnection:Disconnect()
+					slconnection = nil
+				end
+				slabel.Text = "SLOCK: OFF"
+			end
+		end},
+		
+		{"Destroy Aura", function()
+			local distance = tonumber(Target.Text) or 13
+			
+			aura = not aura
+			
+			if aura then
+			local auraconnection = RunService.Stepped:Connect(function()
+					local character = Players.LocalPlayer.Character
+					local root = character and getRoot(character)
+	
+					if not root then return end
+	
+					for _, part in pairs(workspace:GetDescendants()) do
+						if part:IsA("BasePart")
+							and part ~= workspace.Baseplate
+							and part.Name ~= "Floor"
+							and not part:IsDescendantOf(character) then
+	
+							if (part.Position - root.Position).Magnitude <= distance then
+								Destroy(part)
+							end
+						end
+					end
+			end)
+			alabel.Text = "AURA: ON"
+			else
+				if auraconnection then
+				auraconnection:Disconnect()
+				auraconnection = nil
+				end
+				alabel.Text = "AURA: OFF"
 			end
 		end},
 	}
@@ -984,10 +1078,10 @@ local script = G2L["2"];
 		create(unpack(item))
 	end
 	
-	local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/main/notificationtest"))();
-	local Notify = Notification.Notify;
+	--local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/FE/main/notificationtest"))();
+	--local Notify = Notification.Notify;
 	
-	if SupportedGame == true then
+	--[[if SupportedGame == true then
 		Notify({
 			Description = "This game is supported, have fun";
 			Title = "Comet";
@@ -1001,8 +1095,14 @@ local script = G2L["2"];
 			Duration = 5;
 	
 		});
-	end
+	end]]
 	
+	task.spawn(function()
+		if RunService:IsStudio() then
+			print("Roblox Studio detected. Enjoy Comet!")
+		end
+		print("Comet process loaded in " .. (tick() - start) .. " secs.")
+	end)
 end;
 task.spawn(C_2);
 -- StarterGui.Comet.Interface.UIDrag
